@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float value = 100;
     public RectTransform valueRectTransform;
+    public Animator animator;
 
     public GameObject gameplayUI;
     public GameObject gameoverScreen;
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         GetComponent<FireballCaster>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
+        animator.SetTrigger("dead");
     }
     public void AddHealth(float amount)
     {
